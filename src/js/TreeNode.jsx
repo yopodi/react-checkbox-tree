@@ -9,6 +9,7 @@ import languageShape from './shapes/languageShape';
 
 class TreeNode extends React.PureComponent {
     static propTypes = {
+        checkType: PropTypes.string.isRequired,
         checked: PropTypes.number.isRequired,
         disabled: PropTypes.bool.isRequired,
         expandDisabled: PropTypes.bool.isRequired,
@@ -27,7 +28,6 @@ class TreeNode extends React.PureComponent {
         ]).isRequired,
         onCheck: PropTypes.func.isRequired,
         onExpand: PropTypes.func.isRequired,
-        checkType:Props.string.isRequired,
         children: PropTypes.node,
         className: PropTypes.string,
         expandOnClick: PropTypes.bool,
@@ -234,9 +234,9 @@ class TreeNode extends React.PureComponent {
                     disabled={disabled}
                     id={inputId}
                     indeterminate={checked === 2}
+                    type={checkType}
                     onChange={() => {}}
                     onClick={this.onCheck}
-                    type={checkType}
                 />
                 <span
                     aria-checked={checked === 1}
