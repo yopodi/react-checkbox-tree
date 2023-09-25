@@ -59,7 +59,7 @@ class TreeNode extends React.PureComponent {
 
     onCheck() {
         const { value, onCheck } = this.props;
-
+        console.log({ value, checked: this.getCheckState({ toggle: true }) });
         onCheck({ value, checked: this.getCheckState({ toggle: true }) });
     }
 
