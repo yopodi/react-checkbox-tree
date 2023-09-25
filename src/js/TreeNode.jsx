@@ -27,7 +27,7 @@ class TreeNode extends React.PureComponent {
         ]).isRequired,
         onCheck: PropTypes.func.isRequired,
         onExpand: PropTypes.func.isRequired,
-
+        checkType:Props.string.isRequired,
         children: PropTypes.node,
         className: PropTypes.string,
         expandOnClick: PropTypes.bool,
@@ -222,6 +222,7 @@ class TreeNode extends React.PureComponent {
             treeId,
             value,
             onClick,
+            checkType,
         } = this.props;
         const clickable = onClick !== null;
         const inputId = `${treeId}-${String(value).split(' ').join('_')}`;
@@ -235,6 +236,7 @@ class TreeNode extends React.PureComponent {
                     indeterminate={checked === 2}
                     onChange={() => {}}
                     onClick={this.onCheck}
+                    type={checkType}
                 />
                 <span
                     aria-checked={checked === 1}

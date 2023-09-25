@@ -17,8 +17,8 @@ import nodeShape from './shapes/nodeShape';
 class CheckboxTree extends React.Component {
     static propTypes = {
         nodes: PropTypes.arrayOf(nodeShape).isRequired,
-
         checkModel: PropTypes.oneOf([CHECK_MODEL.LEAF, CHECK_MODEL.ALL]),
+        checkType: PropTypes.string,
         checked: listShape,
         direction: PropTypes.string,
         disabled: PropTypes.bool,
@@ -82,6 +82,7 @@ class CheckboxTree extends React.Component {
         onCheck: () => {},
         onClick: null,
         onExpand: () => {},
+        checkType: 'checkbox',
     };
 
     constructor(props) {
@@ -230,6 +231,7 @@ class CheckboxTree extends React.Component {
             optimisticToggle,
             showNodeTitle,
             showNodeIcon,
+            checkType,
         } = this.props;
         const { id, model } = this.state;
         const { icons: defaultIcons } = CheckboxTree.defaultProps;
@@ -257,6 +259,7 @@ class CheckboxTree extends React.Component {
             return (
                 <TreeNode
                     key={key}
+                    checkType={checkType}
                     checked={flatNode.checkState}
                     className={node.className}
                     disabled={flatNode.disabled}

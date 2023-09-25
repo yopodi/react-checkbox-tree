@@ -30,7 +30,7 @@ class NativeCheckbox extends React.PureComponent {
         // Remove property that does not exist in HTML
         delete props.indeterminate;
 
-        return <input {...props} ref={(c) => { this.checkbox = c; }} type="checkbox" />;
+        return <input {...props} ref={(c) => { this.checkbox = c; }} />;
     }
 }
 
