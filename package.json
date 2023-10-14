@@ -17,7 +17,7 @@
   "homepage": "https://jakezatecky.github.io/react-checkbox-tree",
   "bugs": "https://github.com/jakezatecky/react-checkbox-tree/issues",
   "main": "lib/index.js",
-  "browser": "src/index.js",
+  "browser": "lib/index.browser.js",
   "scripts": {
     "build-less": "lessc src/less/react-checkbox-tree.less .css-compare/less.css",
     "build-script": "npm run build-script-node && npm run build-script-web",
@@ -85,7 +85,6 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "babel-preset-es2015": "^6.24.1",
     "classnames": "^2.2.5",
     "lodash": "^4.17.10",
     "nanoid": "^3.0.0",
