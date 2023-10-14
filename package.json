@@ -1,6 +1,6 @@
 {
   "name": "react-checkbox-tree",
-  "version": "1.8.0-3",
+  "version": "1.8.0-4",
   "description": "A simple and elegant checkbox tree for React.",
   "author": "Jake Zatecky",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "gh-build": "webpack --config=webpack.config.test.js --mode=production",
     "gh-deploy": "npm run gh-build && bash ./gh-deploy.sh",
     "prepublishOnly": "npm run release",
-    "release": "npm run build",
+    "release": "npm run test && npm run build && npm run test-style-equivalence",
     "test": "npm run test-script && npm run test-style",
     "test-script": "npm run test-script-format && npm run test-script-mocha",
     "test-script-format": "eslint src/**/*.{js,jsx} examples/src/**/*.{js,jsx} test/**/*.{js,jsx} *.{js,jsx}",
@@ -85,6 +85,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
     "classnames": "^2.2.5",
     "lodash": "^4.17.10",
     "nanoid": "^3.0.0",
